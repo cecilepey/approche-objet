@@ -33,7 +33,7 @@ public class Client {
 	}
 
 	public Client(int numeroCompte, String nom, String prenom, AdressePostale adresse) {
-		this(numeroCompte, prenom, prenom);
+		this(numeroCompte, nom, prenom);
 		this.adresse = adresse;
 		System.out.println("L'adresse est : " + adresse.numeroRue + " " + adresse.rue + " " + adresse.codePostal + " "
 				+ adresse.ville);

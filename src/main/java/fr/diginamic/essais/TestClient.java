@@ -11,9 +11,8 @@ public class TestClient {
 
 		Client client1 = new Client(25, "Peyras", "Cécile", client1Adresse);
 
-		AdressePostale client2Adresse = new AdressePostale(20, "boulevard de la plage", 17000, "La Rochelle");
-
-		Client client2 = new Client(27, "Dupont", "Jean", client2Adresse);
+		Client client2 = new Client(27, "Dupont", "Jean",
+				new AdressePostale(20, "boulevard de la plage", 17000, "La Rochelle"));
 
 	}
 
