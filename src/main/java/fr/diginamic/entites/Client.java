@@ -39,4 +39,36 @@ public class Client {
 				+ adresse.ville);
 	}
 
+	public void afficherNom() {
+		System.out.println(prenom + " " + nom.toUpperCase());
+
+	}
+
+	public void modifierNom(String nom) {
+		this.nom = nom;
+
+	}
+
+	public void modifierPrenom(String prenom) {
+		this.prenom = prenom;
+
+	}
+
+	public void modifierNoCompte(int numeroCompte) {
+		this.numeroCompte = numeroCompte;
+
+	}
+
+	public String nom() {
+		return nom;
+	}
+
+	public String prenom() {
+		return prenom;
+	}
+
+	public int numeroCompte() {
+		return numeroCompte;
+	}
+
 }
