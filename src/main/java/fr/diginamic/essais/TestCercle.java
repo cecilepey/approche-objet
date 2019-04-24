@@ -2,6 +2,7 @@ package fr.diginamic.essais;
 
 import fr.diginamic.entites.Cercle;
 import fr.diginamic.utils.CercleFactory;
+import fr.diginamic.utils.CercleService;
 
 public class TestCercle {
 
@@ -18,6 +19,12 @@ public class TestCercle {
 
 		System.out.println("le périmètre du cercle 3 est : " + cercle3.getPerimetre() + " et sa surface est : "
 				+ cercle3.getSurface());
+
+		Cercle cercle4 = new Cercle(10);
+
+		CercleService.doubler(cercle4);
+
+		System.out.println(cercle4.rayon);
 
 	}
 
