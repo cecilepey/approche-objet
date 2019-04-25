@@ -7,25 +7,19 @@ public class TestPersonne {
 
 	public static void main(String[] args) {
 
-		Personne cecile = new Personne();
+		AdressePostale adresse1 = new AdressePostale(8, "rue des peupliers", 44000, "nantes");
 
-		cecile.nom = "Peyras";
-		cecile.prenom = "Cecile";
-		cecile.adresse = new AdressePostale(8, "impasse Camille Claudel", 44360, "Vigneux de Bretagne");
+		Personne cecile = new Personne("Peyras", "Cécile", adresse1);
 
-		Personne ami = new Personne();
-		ami.nom = "Pierre";
-		ami.prenom = "Paul";
-		ami.adresse = new AdressePostale(5, "rue de Nantes", 44880, "Sautron");
+		AdressePostale adresse2 = new AdressePostale(5, "rue de Nantes", 44880, "Sautron");
+
+		Personne ami = new Personne("Pierre", "Paul", adresse2);
 
 		// Autre méthode et qui permet d'ajouter la meme adresse à plusieurs
 		// personnes.
 		AdressePostale adresse3 = new AdressePostale(6, "rue des peupliers", 44000, "nantes");
 
-		Personne personne3 = new Personne();
-		personne3.nom = "Marchand";
-		personne3.prenom = "Estelle";
-		personne3.adresse = adresse3;
+		Personne personne3 = new Personne("MArchand", "Estelle", adresse3);
 
 	}
 }

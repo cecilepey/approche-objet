@@ -1,6 +1,8 @@
-package fr.diginamic.entites;
+package fr.diginamic.heritage;
 
-public class Cercle {
+import fr.diginamic.entites.Forme;
+
+public class Cercle extends Forme {
 
 	private double rayon;
 
@@ -8,16 +10,19 @@ public class Cercle {
 	 * @param rayon
 	 */
 	public Cercle(double rayon) {
-
 		this.rayon = rayon;
 	}
 
-	public double getPerimetre() {
-		return 2 * Math.PI * rayon;
+	@Override
+	public double calculerSurface() {
+
+		return Math.PI * rayon * rayon;
 	}
 
-	public double getSurface() {
-		return Math.PI * rayon * rayon;
+	@Override
+	public double calculerPerimetre() {
+
+		return 2 * Math.PI * rayon;
 	}
 
 	/**

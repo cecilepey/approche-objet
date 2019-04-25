@@ -8,10 +8,10 @@ package fr.diginamic.entites;
  */
 public class Client {
 
-	public int numeroCompte;
-	public String nom;
-	public String prenom;
-	public AdressePostale adresse;
+	private int numeroCompte;
+	private String nom;
+	private String prenom;
+	private AdressePostale adresse;
 
 	/**
 	 * Constructeur du client
@@ -39,36 +39,64 @@ public class Client {
 				+ adresse.ville);
 	}
 
-	public void afficherNom() {
-		System.out.println(prenom + " " + nom.toUpperCase());
-
+	/**
+	 * @return the numeroCompte
+	 */
+	public int getNumeroCompte() {
+		return numeroCompte;
 	}
 
-	public void modifierNom(String nom) {
-		this.nom = nom;
-
-	}
-
-	public void modifierPrenom(String prenom) {
-		this.prenom = prenom;
-
-	}
-
-	public void modifierNoCompte(int numeroCompte) {
+	/**
+	 * @param numeroCompte
+	 *            the numeroCompte to set
+	 */
+	public void setNumeroCompte(int numeroCompte) {
 		this.numeroCompte = numeroCompte;
-
 	}
 
-	public String nom() {
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
 		return nom;
 	}
 
-	public String prenom() {
+	/**
+	 * @param nom
+	 *            the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * @return the prenom
+	 */
+	public String getPrenom() {
 		return prenom;
 	}
 
-	public int numeroCompte() {
-		return numeroCompte;
+	/**
+	 * @param prenom
+	 *            the prenom to set
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	/**
+	 * @return the adresse
+	 */
+	public AdressePostale getAdresse() {
+		return adresse;
+	}
+
+	/**
+	 * @param adresse
+	 *            the adresse to set
+	 */
+	public void setAdresse(AdressePostale adresse) {
+		this.adresse = adresse;
 	}
 
 }

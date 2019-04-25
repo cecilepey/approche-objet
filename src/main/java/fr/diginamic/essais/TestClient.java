@@ -14,12 +14,12 @@ public class TestClient {
 		Client client2 = new Client(27, "Dupont", "Jean",
 				new AdressePostale(20, "boulevard de la plage", 17000, "La Rochelle"));
 
-		client1.modifierNom("Noel");
-		client1.modifierPrenom("papa");
-		client1.modifierNoCompte(121);
-		client1.afficherNom();
+		client1.setNom("Noel");
+		client1.setPrenom("papa");
+		client1.setNumeroCompte(121);
+		client1.getNom();
 
-		System.out.println(client1.numeroCompte());
+		System.out.println(client1.getNumeroCompte());
 
 	}
 

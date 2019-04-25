@@ -2,9 +2,18 @@ package fr.diginamic.operations;
 
 public class CalculMoyenne {
 
-	double[] tableau;
+	private double[] tableau;
 
-	int indice = 0;
+	private int indice = 0;
+
+	/**
+	 * @param tableau
+	 * @param indice
+	 */
+	public CalculMoyenne(double[] tableau, int indice) {
+		this.tableau = tableau;
+		this.indice = indice;
+	}
 
 	public CalculMoyenne(int longueur) {
 
@@ -32,6 +41,13 @@ public class CalculMoyenne {
 
 	}
 
+	// pour ajouter plusieurs valeurs d'un seul coup, on peut utilser ...
+	public void ajout(double... nbs) {
+		for (int i = 0; i < nbs.length; i++) {
+			ajout(nbs[i]);
+		}
+	}
+
 	public double calcul() {
 
 		double moyenne;
@@ -47,6 +63,36 @@ public class CalculMoyenne {
 
 		return moyenne;
 
+	}
+
+	/**
+	 * @return the tableau
+	 */
+	public double[] getTableau() {
+		return tableau;
+	}
+
+	/**
+	 * @param tableau
+	 *            the tableau to set
+	 */
+	public void setTableau(double[] tableau) {
+		this.tableau = tableau;
+	}
+
+	/**
+	 * @return the indice
+	 */
+	public int getIndice() {
+		return indice;
+	}
+
+	/**
+	 * @param indice
+	 *            the indice to set
+	 */
+	public void setIndice(int indice) {
+		this.indice = indice;
 	}
 
 }

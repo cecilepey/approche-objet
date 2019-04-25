@@ -1,20 +1,24 @@
 package fr.diginamic.entites;
 
-public class Personne {
+public abstract class Intervenant {
 
 	private String nom;
 	private String prenom;
-	private AdressePostale adresse;
 
 	/**
 	 * @param nom
 	 * @param prenom
-	 * @param adresse
 	 */
-	public Personne(String nom, String prenom, AdressePostale adresse) {
+	public Intervenant(String nom, String prenom) {
 		this.nom = nom;
 		this.prenom = prenom;
-		this.adresse = adresse;
+	}
+
+	public abstract double getSalaire();
+
+	public void afficherDonnees() {
+		System.out.println("Nom : " + nom + " \nPrénom : " + prenom + " \nSalaire : " + getSalaire() + " € \n");
+
 	}
 
 	/**
@@ -47,19 +51,10 @@ public class Personne {
 		this.prenom = prenom;
 	}
 
-	/**
-	 * @return the adresse
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
 	 */
-	public AdressePostale getAdresse() {
-		return adresse;
-	}
-
-	/**
-	 * @param adresse
-	 *            the adresse to set
-	 */
-	public void setAdresse(AdressePostale adresse) {
-		this.adresse = adresse;
-	}
 
 }
