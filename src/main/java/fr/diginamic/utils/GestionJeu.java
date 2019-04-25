@@ -36,6 +36,7 @@ public class GestionJeu {
 					+ adversaire.getForce() + " point de force. ");
 		}
 
+		System.out.println("Vous avez " + hero.getPtVie() + " points de vie et " + hero.getForce() + " point de force");
 		System.out.println("appuyer sur 1 pour le combattre");
 
 		while (hero.enVie() == true) {
@@ -55,6 +56,8 @@ public class GestionJeu {
 
 				} else if (hero.enVie() == false) {
 					System.out.println("Vous êtes mort ! Votre score est de " + hero.getScore());
+					System.out.println("============== GAME OVER =============");
+					break;
 
 				} else {
 					System.out.println("Vous avez " + hero.getPtVie() + " points de vie");

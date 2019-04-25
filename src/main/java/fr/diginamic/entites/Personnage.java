@@ -21,7 +21,7 @@ public abstract class Personnage {
 
 	public int calculAttaque() {
 
-		attaque = force + random.nextInt(10) + 1;
+		attaque = force + random.nextInt(11) + 1;
 
 		return attaque;
 	}
