@@ -1,6 +1,8 @@
 package fr.diginamic.entites;
 
-public class Maison {
+import fr.diginamic.tp6.ISurface;
+
+public class Maison implements ISurface {
 
 	private Piece[] tableau;
 	private int index = 0;
@@ -84,6 +86,18 @@ public class Maison {
 		}
 
 		return nbPiece;
+	}
+
+	@Override
+	public double calculerSurface() {
+		double superficieTotale = 0;
+
+		for (int i = 0; i < tableau.length; i++) {
+
+			superficieTotale = superficieTotale + tableau[i].getSuperficie();
+
+		}
+		return superficieTotale;
 	}
 
 	/**

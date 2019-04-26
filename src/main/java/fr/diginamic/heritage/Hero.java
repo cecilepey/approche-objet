@@ -4,11 +4,21 @@ import java.util.Random;
 
 import fr.diginamic.entites.Personnage;
 
+/**
+ * @author Cécile Peyras
+ *
+ */
 public class Hero extends Personnage {
 
+	/**
+	 * 
+	 */
 	private int score = 0;
 	Random random = new Random();
 
+	/**
+	 * 
+	 */
 	public Hero() {
 
 		this.force = random.nextInt(7) + 12;
@@ -17,12 +27,19 @@ public class Hero extends Personnage {
 
 	}
 
+	/**
+	 * @param adversaire
+	 * @return
+	 */
 	public int setAdversaire(int adversaire) {
 
 		return adversaire;
 
 	}
 
+	/**
+	 * @param adversaire
+	 */
 	public void calculerScore(Personnage adversaire) {
 
 		if (adversaire.getType() == 1) {
