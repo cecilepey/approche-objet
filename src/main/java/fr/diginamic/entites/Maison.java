@@ -29,6 +29,7 @@ public class Maison implements ISurface {
 
 	}
 
+	// méthode d'origine sans interface
 	public double calculSuperficie() {
 
 		double superficieTotale = 0;
@@ -88,6 +89,7 @@ public class Maison implements ISurface {
 		return nbPiece;
 	}
 
+	// methode avec l'interface
 	@Override
 	public double calculerSurface() {
 		double superficieTotale = 0;
