@@ -1,90 +1,98 @@
 package fr.diginamic.operations;
 
-import java.util.ArrayList;
-
 public class CalculMoyenne {
 
-	private ArrayList<Double> list = new ArrayList<Double>();
+	private double[] tableau;
 
-	// private double[] tableau;
-
-	// private int indice = 0;
+	private int indice = 0;
 
 	/**
 	 * @param tableau
 	 * @param indice
 	 */
-	public CalculMoyenne() {
+	public CalculMoyenne(double[] tableau, int indice) {
+		this.tableau = tableau;
+		this.indice = indice;
+	}
+
+	public CalculMoyenne(int longueur) {
+
+		if (longueur < 0) {
+
+			System.out.println("Le tableau doit avoir une valeur supérieure ou égale à 0");
+		} else {
+
+			tableau = new double[longueur];
+		}
 
 	}
 
-	/*
-	 * public CalculMoyenne(int longueur) {
-	 * 
-	 * 
-	 * if (longueur < 0) {
-	 * 
-	 * System.out.
-	 * println("Le tableau doit avoir une valeur supérieure ou égale à 0"); }
-	 * else {
-	 * 
-	 * tableau = new double[longueur]; }
-	 * 
-	 * }
-	 */
-
 	public void ajout(double ajout) {
 
-		list.add(ajout);
+		if (indice > tableau.length - 1) {
 
-		/*
-		 * if (indice > tableau.length - 1) {
-		 * 
-		 * System.out.println("Vous avez entrez trop d'éléments"); } else {
-		 * 
-		 * tableau[indice] = ajout; indice++;
-		 * 
-		 * }
-		 */
+			System.out.println("Vous avez entrez trop d'éléments");
+		} else {
+
+			tableau[indice] = ajout;
+			indice++;
+
+		}
 
 	}
 
 	// pour ajouter plusieurs valeurs d'un seul coup, on peut utilser ...
-	/*
-	 * public void ajout(double... nbs) { for (int i = 0; i < nbs.length; i++) {
-	 * ajout(nbs[i]); } }
-	 */
+	public void ajout(double... nbs) {
+		for (int i = 0; i < nbs.length; i++) {
+			ajout(nbs[i]);
+		}
+	}
 
 	public double calcul() {
 
 		double moyenne;
 		double somme = 0;
 
-		for (int i = 0; i < list.size(); i++) {
+		for (int i = 0; i < tableau.length; i++) {
 
-			somme = somme + list.get(i);
+			somme = somme + tableau[i];
 
 		}
 
-		moyenne = somme / list.size();
+		moyenne = somme / tableau.length;
 
 		return moyenne;
 
 	}
 
 	/**
-	 * @return the list
+	 * @return the tableau
 	 */
-	public ArrayList<Double> getList() {
-		return list;
+	public double[] getTableau() {
+		return tableau;
 	}
 
 	/**
-	 * @param list
-	 *            the list to set
+	 * @param tableau
+	 *            the tableau to set
 	 */
-	public void setList(ArrayList<Double> list) {
-		this.list = list;
+	public void setTableau(double[] tableau) {
+		this.tableau = tableau;
+	}
+
+	/**
+	 * @return the indice
+	 */
+	public int getIndice() {
+		return indice;
+	}
+
+	/**
+	 * @param indice
+	 *            the indice to set
+	 */
+	public void setIndice(int indice) {
+		this.indice = indice;
 	}
 
 }

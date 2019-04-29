@@ -17,11 +17,12 @@ public class TestAffichageSurface {
 	public static void main(String[] args) {
 
 		Chambre chambre = new Chambre(2, 5);
+
 		Maison maison = new Maison(2);
 
 		maison.ajouterPiece(chambre);
 		SalleDeBain sdb = new SalleDeBain(8, 1);
-		maison.ajouterPiece(chambre);
+		maison.ajouterPiece(sdb);
 
 		System.out.println(maison.calculerSurface());
 
