@@ -39,6 +39,7 @@ public class TestPays {
 
 		double minPIBTotal = pays.iterator().next().getPIBHabitants() * pays.iterator().next().getNbHabitants();
 		String paysMinPIBTotal = null;
+		Pays paysMinTotal = null;
 
 		for (Pays listePays : pays) {
 
@@ -55,6 +56,9 @@ public class TestPays {
 			if (minPIBTotal > listePays.getNbHabitants() * listePays.getPIBHabitants()) {
 				minPIBTotal = listePays.getNbHabitants() * listePays.getPIBHabitants();
 				paysMinPIBTotal = listePays.getNom().toUpperCase();
+				listePays.setNom(paysMinPIBTotal);
+				paysMinTotal = listePays;
+
 			}
 
 		}
@@ -63,7 +67,7 @@ public class TestPays {
 		System.out.println("Pays avec le PIB total : " + paysMaxPIBTotal);
 		System.out.println("Pays avec le PIB total le plus petit (en majuscule): " + paysMinPIBTotal);
 
-		pays.remove(paysMinPIBTotal);
+		pays.remove(paysMinTotal);
 
 		for (Pays listePays : pays) {
 			System.out.println(listePays.getNom() + " - nb habitants : " + listePays.getNbHabitants()
