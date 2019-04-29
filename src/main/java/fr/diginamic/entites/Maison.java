@@ -1,31 +1,26 @@
 package fr.diginamic.entites;
 
+import java.util.ArrayList;
+
 import fr.diginamic.tp6.ISurface;
 
 public class Maison implements ISurface {
 
-	private Piece[] tableau;
-	private int index = 0;
+	// private Piece[] tableau;
+	// private int index = 0;
+
+	private ArrayList<Piece> list = new ArrayList<Piece>();
 
 	/**
-	 * @param tableau
-	 * @param index
+	 * 	
 	 */
-	public Maison(Piece[] tableau, int index) {
-		this.tableau = tableau;
-		this.index = index;
-	}
+	public Maison() {
 
-	public Maison(int index) {
-
-		tableau = new Piece[index];
 	}
 
 	public void ajouterPiece(Piece piece) {
 
-		tableau[index] = piece;
-
-		index++;
+		list.add(piece);
 
 	}
 
@@ -34,9 +29,9 @@ public class Maison implements ISurface {
 
 		double superficieTotale = 0;
 
-		for (int i = 0; i < tableau.length; i++) {
+		for (int i = 0; i < list.size(); i++) {
 
-			superficieTotale = superficieTotale + tableau[i].getSuperficie();
+			superficieTotale = superficieTotale + list.get(i).getSuperficie();
 
 		}
 		return superficieTotale;
@@ -46,11 +41,11 @@ public class Maison implements ISurface {
 
 		double superficieEtage = 0;
 
-		for (int i = 0; i < tableau.length; i++) {
+		for (int i = 0; i < list.size(); i++) {
 
-			if (numeroEtage == tableau[i].getNumeroEtage()) {
+			if (numeroEtage == list.get(i).getNumeroEtage()) {
 
-				superficieEtage = superficieEtage + tableau[i].getSuperficie();
+				superficieEtage = superficieEtage + list.get(i).getSuperficie();
 			}
 		}
 
@@ -61,11 +56,11 @@ public class Maison implements ISurface {
 
 		double superficiePiece = 0;
 
-		for (int i = 0; i < tableau.length; i++) {
+		for (int i = 0; i < list.size(); i++) {
 
-			if (tableau[i].getType() == typePiece) {
+			if (list.get(i).getType() == typePiece) {
 
-				superficiePiece = superficiePiece + tableau[i].getSuperficie();
+				superficiePiece = superficiePiece + list.get(i).getSuperficie();
 			}
 
 		}
@@ -77,9 +72,9 @@ public class Maison implements ISurface {
 
 		double nbPiece = 0;
 
-		for (int i = 0; i < tableau.length; i++) {
+		for (int i = 0; i < list.size(); i++) {
 
-			if (tableau[i].getType() == typePiece) {
+			if (list.get(i).getType() == typePiece) {
 
 				nbPiece++;
 			}
@@ -94,42 +89,27 @@ public class Maison implements ISurface {
 	public double calculerSurface() {
 		double superficieTotale = 0;
 
-		for (int i = 0; i < tableau.length; i++) {
+		for (int i = 0; i < list.size(); i++) {
 
-			superficieTotale = superficieTotale + tableau[i].getSuperficie();
+			superficieTotale = superficieTotale + list.get(i).getSuperficie();
 
 		}
 		return superficieTotale;
 	}
 
 	/**
-	 * @return the tableau
+	 * @return the list
 	 */
-	public Piece[] getTableau() {
-		return tableau;
+	public ArrayList<Piece> getList() {
+		return list;
 	}
 
 	/**
-	 * @param tableau
-	 *            the tableau to set
+	 * @param list
+	 *            the list to set
 	 */
-	public void setTableau(Piece[] tableau) {
-		this.tableau = tableau;
-	}
-
-	/**
-	 * @return the index
-	 */
-	public int getIndex() {
-		return index;
-	}
-
-	/**
-	 * @param index
-	 *            the index to set
-	 */
-	public void setIndex(int index) {
-		this.index = index;
+	public void setList(ArrayList<Piece> list) {
+		this.list = list;
 	}
 
 }

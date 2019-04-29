@@ -30,6 +30,8 @@ public class TestListeString {
 		list.add("Marseille");
 		list.add("Tarbes");
 
+		System.out.println(list);
+
 		String max = "";
 
 		for (int i = 0; i < list.size(); i++) {
@@ -41,7 +43,7 @@ public class TestListeString {
 
 		}
 
-		System.out.println(max);
+		System.out.println("La ville ayant le plus grand nombre de lettres est : " + max);
 
 		for (int i = 0; i < list.size(); i++) {
 
@@ -54,9 +56,15 @@ public class TestListeString {
 
 		while (iter.hasNext()) {
 
-			// if( == "N")
+			String mot = iter.next();
+
+			if (mot.startsWith("N")) {
+				iter.remove();
+			}
 
 		}
+
+		System.out.println(list);
 
 	}
 

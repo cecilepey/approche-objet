@@ -6,7 +6,7 @@ public class TestMoyenne {
 
 	public static void main(String[] args) {
 
-		CalculMoyenne moyenne = new CalculMoyenne(3);
+		CalculMoyenne moyenne = new CalculMoyenne();
 
 		moyenne.ajout(1);
 		moyenne.ajout(2);

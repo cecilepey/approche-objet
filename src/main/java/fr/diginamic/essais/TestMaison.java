@@ -21,7 +21,7 @@ public class TestMaison {
 		SalleDeBain sdb1 = new SalleDeBain(7, 1);
 		SalleDeBain sdb2 = new SalleDeBain(4, 0);
 
-		Maison maison = new Maison(9);
+		Maison maison = new Maison();
 
 		maison.ajouterPiece(sdb2);
 		maison.ajouterPiece(sdb1);
@@ -38,7 +38,7 @@ public class TestMaison {
 		 * Salle de bain
 		 */
 
-		System.out.println(maison.getIndex());
+		System.out.println(maison.getList().size());
 
 		System.out.println(maison.calculSuperficie());
 		System.out.println(maison.superficieEtage(0));
