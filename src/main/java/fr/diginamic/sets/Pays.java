@@ -3,7 +3,7 @@ package fr.diginamic.sets;
 public class Pays {
 
 	private String nom;
-	private long nbHabitants;
+	private int nbHabitants;
 	private double PIBHabitants;
 
 	/**
@@ -11,10 +11,36 @@ public class Pays {
 	 * @param nbHabitants
 	 * @param pIBHabitants
 	 */
-	public Pays(String nom, long nbHabitants, double pIBHabitants) {
+	public Pays(String nom, int nbHabitants, double pIBHabitants) {
 		this.nom = nom;
 		this.nbHabitants = nbHabitants;
 		PIBHabitants = pIBHabitants;
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#equals(java.lang.Object)
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Pays other = (Pays) obj;
+		if (Double.doubleToLongBits(PIBHabitants) != Double.doubleToLongBits(other.PIBHabitants))
+			return false;
+		if (nbHabitants != other.nbHabitants)
+			return false;
+		if (nom == null) {
+			if (other.nom != null)
+				return false;
+		} else if (!nom.equals(other.nom))
+			return false;
+		return true;
 	}
 
 	/**
@@ -35,7 +61,7 @@ public class Pays {
 	/**
 	 * @return the nbHabitants
 	 */
-	public long getNbHabitants() {
+	public int getNbHabitants() {
 		return nbHabitants;
 	}
 
@@ -43,7 +69,7 @@ public class Pays {
 	 * @param nbHabitants
 	 *            the nbHabitants to set
 	 */
-	public void setNbHabitants(long nbHabitants) {
+	public void setNbHabitants(int nbHabitants) {
 		this.nbHabitants = nbHabitants;
 	}
 

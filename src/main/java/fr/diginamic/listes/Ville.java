@@ -3,13 +3,13 @@ package fr.diginamic.listes;
 public class Ville {
 
 	private String nom;
-	private long nbHabitants;
+	private int nbHabitants;
 
 	/**
 	 * @param nom
 	 * @param nbHabitants
 	 */
-	public Ville(String nom, long nbHabitants) {
+	public Ville(String nom, int nbHabitants) {
 		this.nom = nom;
 		this.nbHabitants = nbHabitants;
 	}
@@ -32,7 +32,7 @@ public class Ville {
 	/**
 	 * @return the nbHabitants
 	 */
-	public long getNbHabitants() {
+	public int getNbHabitants() {
 		return nbHabitants;
 	}
 
@@ -40,7 +40,7 @@ public class Ville {
 	 * @param nbHabitants
 	 *            the nbHabitants to set
 	 */
-	public void setNbHabitants(long nbHabitants) {
+	public void setNbHabitants(int nbHabitants) {
 		this.nbHabitants = nbHabitants;
 	}
 

@@ -56,7 +56,7 @@ public class TestPays {
 			if (minPIBTotal > listePays.getNbHabitants() * listePays.getPIBHabitants()) {
 				minPIBTotal = listePays.getNbHabitants() * listePays.getPIBHabitants();
 				paysMinPIBTotal = listePays.getNom().toUpperCase();
-				listePays.setNom(paysMinPIBTotal);
+				listePays.setNom(paysMinPIBTotal.toUpperCase());
 				paysMinTotal = listePays;
 
 			}

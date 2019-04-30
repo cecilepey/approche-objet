@@ -27,8 +27,8 @@ public class TestVille {
 		ville.add(Marseille);
 		ville.add(Tarbes);
 
-		long max = 0;
-		long mini = ville.get(0).getNbHabitants();
+		int max = 0;
+		int mini = ville.get(0).getNbHabitants();
 		String villeMaxHabitants = "";
 
 		for (int i = 0; i < ville.size(); i++) {
@@ -53,7 +53,7 @@ public class TestVille {
 
 		while (iter.hasNext()) {
 
-			long nbMini = iter.next().getNbHabitants();
+			int nbMini = iter.next().getNbHabitants();
 
 			if (nbMini == mini) {
 				iter.remove();
