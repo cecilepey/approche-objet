@@ -9,7 +9,7 @@ public class TestPays {
 
 		// USA, France, Allemagne, UK, Italie, Japon, Chine, Russie, Inde
 
-		Set<Pays> pays = new HashSet();
+		Set<Pays> pays = new HashSet<Pays>();
 
 		Pays USA = new Pays("USA", 329_768_959, 59_532);
 		Pays france = new Pays("France", 67_120_000, 44_538);

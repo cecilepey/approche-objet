@@ -10,7 +10,7 @@ public class TestMapPays {
 
 	public static void main(String[] args) {
 
-		Map<String, Pays> pays = new HashMap();
+		Map<String, Pays> pays = new HashMap<String, Pays>();
 
 		Pays USA = new Pays("USA", 329_768_959, 59_532);
 		Pays france = new Pays("France", 67_120_000, 44_538);

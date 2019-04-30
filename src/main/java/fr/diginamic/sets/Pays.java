@@ -1,20 +1,31 @@
 package fr.diginamic.sets;
 
-public class Pays {
+public class Pays implements Comparable<Pays> {
 
 	private String nom;
 	private int nbHabitants;
-	private double PIBHabitants;
+	private int PIBHabitants;
 
 	/**
 	 * @param nom
 	 * @param nbHabitants
 	 * @param pIBHabitants
 	 */
-	public Pays(String nom, int nbHabitants, double pIBHabitants) {
+	public Pays(String nom, int nbHabitants, int pIBHabitants) {
 		this.nom = nom;
 		this.nbHabitants = nbHabitants;
 		PIBHabitants = pIBHabitants;
+	}
+
+	@Override
+	public int compareTo(Pays pays) {
+		if (pays.getPIBHabitants() > this.getPIBHabitants()) {
+			return 1;
+		} else if (pays.getPIBHabitants() == this.getPIBHabitants()) {
+			return 0;
+		}
+
+		return -1;
 	}
 
 	/*
@@ -76,7 +87,7 @@ public class Pays {
 	/**
 	 * @return the pIBHabitants
 	 */
-	public double getPIBHabitants() {
+	public int getPIBHabitants() {
 		return PIBHabitants;
 	}
 
@@ -84,7 +95,7 @@ public class Pays {
 	 * @param pIBHabitants
 	 *            the pIBHabitants to set
 	 */
-	public void setPIBHabitants(double pIBHabitants) {
+	public void setPIBHabitants(int pIBHabitants) {
 		PIBHabitants = pIBHabitants;
 	}
 
