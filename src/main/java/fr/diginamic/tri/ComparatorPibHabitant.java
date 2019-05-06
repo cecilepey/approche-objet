@@ -4,6 +4,12 @@ import java.util.Comparator;
 
 import fr.diginamic.sets.Pays;
 
+/**
+ * Classe qui trie par PIB/habitant
+ * 
+ * @author Cécile Peyras
+ *
+ */
 public class ComparatorPibHabitant implements Comparator<Pays> {
 
 	@Override

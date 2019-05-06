@@ -2,11 +2,16 @@ package fr.diginamic.sets;
 
 public class Pays implements Comparable<Pays> {
 
+	/** nom : String */
 	private String nom;
+	/** nbHabitants : int */
 	private int nbHabitants;
+	/** PIBHabitants : int */
 	private int PIBHabitants;
 
 	/**
+	 * Constructeur
+	 * 
 	 * @param nom
 	 * @param nbHabitants
 	 * @param pIBHabitants
@@ -28,11 +33,6 @@ public class Pays implements Comparable<Pays> {
 		return -1;
 	}
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see java.lang.Object#equals(java.lang.Object)
-	 */
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -42,7 +42,7 @@ public class Pays implements Comparable<Pays> {
 		if (getClass() != obj.getClass())
 			return false;
 		Pays other = (Pays) obj;
-		if (Double.doubleToLongBits(PIBHabitants) != Double.doubleToLongBits(other.PIBHabitants))
+		if (PIBHabitants != other.PIBHabitants)
 			return false;
 		if (nbHabitants != other.nbHabitants)
 			return false;
@@ -85,6 +85,8 @@ public class Pays implements Comparable<Pays> {
 	}
 
 	/**
+	 * Getter
+	 * 
 	 * @return the pIBHabitants
 	 */
 	public int getPIBHabitants() {
@@ -92,6 +94,8 @@ public class Pays implements Comparable<Pays> {
 	}
 
 	/**
+	 * Setter
+	 * 
 	 * @param pIBHabitants
 	 *            the pIBHabitants to set
 	 */

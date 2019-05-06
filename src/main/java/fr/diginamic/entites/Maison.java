@@ -1,5 +1,6 @@
 package fr.diginamic.entites;
 
+import fr.diginamic.Exception.ExceptionMaison;
 import fr.diginamic.tp6.ISurface;
 
 public class Maison implements ISurface {
@@ -11,14 +12,19 @@ public class Maison implements ISurface {
 	 * @param tableau
 	 * @param index
 	 */
-	public Maison(Piece[] tableau, int index) {
+	public Maison(Piece[] tableau) {
 		this.tableau = tableau;
-		this.index = index;
+		this.index = tableau.length;
 	}
 
-	public Maison(int index) {
+	public Maison(int index) throws ExceptionMaison {
 
-		tableau = new Piece[index];
+		if (index < 0) {
+			throw new ExceptionMaison("Vous ne pouvez pas entrer un index négatif");
+		} else {
+			tableau = new Piece[index];
+		}
+
 	}
 
 	public void ajouterPiece(Piece piece) {
