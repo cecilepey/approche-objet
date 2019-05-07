@@ -1,6 +1,7 @@
 
 package fr.diginamic.tp6;
 
+import fr.diginamic.Exception.ExceptionMaison;
 import fr.diginamic.entites.Maison;
 import fr.diginamic.heritage.Carre;
 import fr.diginamic.heritage.Cercle;
@@ -18,11 +19,24 @@ public class TestAffichageSurface {
 
 		Chambre chambre = new Chambre(2, 5);
 
-		Maison maison = new Maison(2);
+		Maison maison = null;
+		try {
+			maison = new Maison(2);
+		} catch (ExceptionMaison e) {
+			e.getMessage();
+		}
 
-		maison.ajouterPiece(chambre);
+		try {
+			maison.ajouterPiece(chambre);
+		} catch (ExceptionMaison e) {
+			e.getMessage();
+		}
 		SalleDeBain sdb = new SalleDeBain(8, 1);
-		maison.ajouterPiece(sdb);
+		try {
+			maison.ajouterPiece(sdb);
+		} catch (ExceptionMaison e) {
+			e.getMessage();
+		}
 
 		System.out.println(maison.calculerSurface());
 

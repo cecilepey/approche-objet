@@ -8,15 +8,6 @@ public class Maison implements ISurface {
 	private Piece[] tableau;
 	private int index = 0;
 
-	/**
-	 * @param tableau
-	 * @param index
-	 */
-	public Maison(Piece[] tableau) {
-		this.tableau = tableau;
-		this.index = tableau.length;
-	}
-
 	public Maison(int index) throws ExceptionMaison {
 
 		if (index < 0) {
@@ -27,11 +18,17 @@ public class Maison implements ISurface {
 
 	}
 
-	public void ajouterPiece(Piece piece) {
+	public void ajouterPiece(Piece piece) throws ExceptionMaison {
 
-		tableau[index] = piece;
+		if (piece == null) {
+			throw new ExceptionMaison("L'objet en paramètre ne peut pas être null");
 
-		index++;
+		} else {
+
+			tableau[index] = piece;
+
+			index++;
+		}
 
 	}
 
@@ -48,7 +45,7 @@ public class Maison implements ISurface {
 		return superficieTotale;
 	}
 
-	public double superficieEtage(int numeroEtage) {
+	public double superficieEtage(int numeroEtage) throws ExceptionMaison {
 
 		double superficieEtage = 0;
 
@@ -57,13 +54,15 @@ public class Maison implements ISurface {
 			if (numeroEtage == tableau[i].getNumeroEtage()) {
 
 				superficieEtage = superficieEtage + tableau[i].getSuperficie();
+			} else {
+				throw new ExceptionMaison("Le numéro d'étage n'existe pas !");
 			}
 		}
 
 		return superficieEtage;
 	}
 
-	public double superficiePiece(int typePiece) {
+	public double superficiePiece(int typePiece) throws ExceptionMaison {
 
 		double superficiePiece = 0;
 
@@ -72,6 +71,8 @@ public class Maison implements ISurface {
 			if (tableau[i].getType() == typePiece) {
 
 				superficiePiece = superficiePiece + tableau[i].getSuperficie();
+			} else {
+				throw new ExceptionMaison("Le type de pièce n'existe pas dans la maison");
 			}
 
 		}
@@ -79,7 +80,7 @@ public class Maison implements ISurface {
 		return superficiePiece;
 	}
 
-	public double nbPiece(int typePiece) {
+	public double nbPiece(int typePiece) throws ExceptionMaison {
 
 		double nbPiece = 0;
 
@@ -88,6 +89,8 @@ public class Maison implements ISurface {
 			if (tableau[i].getType() == typePiece) {
 
 				nbPiece++;
+			} else {
+				throw new ExceptionMaison("Le type de pièce n'existe pas dans la maison");
 			}
 
 		}
